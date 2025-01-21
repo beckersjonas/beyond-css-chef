@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "sass:math";
+@use "generators" as *;
+
+$ff-sans: "Open Sans", sans-serif;
+
+$font-sizes: generateFontSizesMap();
+
+$font-weights: generateFontWeightsMap();

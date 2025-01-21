@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "generators" as *;
+@use "sass:color";
+
+$baseColors: (
+  neutral: rgb(129, 129, 129),
+  primary: rgb(238, 255, 4),
+  secondary: rgb(221, 0, 255),
+  tertiary: rgb(0, 255, 247),
+);
+
+
+$colors: generateColorsMap($baseColors);
+
+$color-hsl: color.to-space(rgb(199, 110, 255), hsl);

@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+.ff-sans {
+  font-family: $ff-sans;
+}
+
+@each $font-size, $value in $font-sizes {
+  .fs-#{$font-size} {
+    font-size: $value;
+  }
+}
+
+@each $font-weight, $value in $font-weights {
+  .fw-#{$font-weight} {
+    font-weight: $value;
+  }
+}

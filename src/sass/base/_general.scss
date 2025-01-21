@@ -1,0 +1,72 @@
+@use "../abstracts/" as *;
+
+:root {
+  font-size: calc(.7rem + .5vw);
+}
+
+body {
+  font-size: fs(400);
+  font-weight: fw(400);
+  color: clr(neutral, 100);
+  background-color: clr(neutral, 900);
+  font-family: $ff-sans;
+  text-align: center;
+  font-weight: fw(200);
+}
+
+// // demo only
+.example {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin-block: 1rem;
+  }
+  .flex {
+    display: flex;
+    flex: 1;
+
+    .color {
+      flex: 1;
+      display: grid;
+      div {
+        display: grid;
+        place-items: center;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9),
+        &:nth-child(10),
+        &:nth-child(11),
+        &:nth-child(12),
+        &:nth-child(13),
+        &:nth-child(14),
+        &:nth-child(15)
+        {
+          color: #000;
+          // color: transparent;
+        }
+      }
+    }
+
+    .font-size {
+      flex: 1;
+      display: grid;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:not(:last-child) {
+          border-bottom: 1px solid;
+        }
+      }
+    }
+
+  }
+}

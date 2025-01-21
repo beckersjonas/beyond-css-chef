@@ -1,0 +1,84 @@
+@use "sass:map";
+@use "sass:color";
+
+/** 
+ * Generates a map of colors and shades for every color of a given map of `base-colors`
+ *
+ * This functions generates a map of colors and 21 shades from 100% lightness (white) to -100% lightness (dark)
+ * for every color of a given `base-colors`-map. The keys for every shade range from 50 to 1000 growing
+ * by 50, where the key of "500" represents the original given color.
+ *
+ * @returns {$colors} - A map of colors and shades - Example: ( 
+ *   red: (50: hsl(0, 100%, 100%), 100: hsl(0, 100%, 95%), 15: hsl(0, 100%, 90%), ..., 
+ *   green: (50: hsl(80, 100%, 100%), 100: hsl(80, 100%, 95%), 15: hsl(80, 100%, 90%), ..., 
+ * )
+*/
+@function generateColorsMap($base-colors) {
+  $colors: ();
+  $max-lightness: 100;
+  $min-lightness: -100;
+  $steps: 41;
+  $max-shade-name: 1000;
+  @each $color-name, $color-value in $base-colors {
+    $shades: ();
+    $color: color.to-space($color-value, hsl);
+    @for $counter from 1 through $steps {
+      $shade-name: calc(($counter - 1) * $max-shade-name / ($steps - 1));
+      $lightness: (
+          $max-lightness - (($counter - 1) * calc(($max-lightness - $min-lightness) / ($steps - 1)))
+        ) *
+        1%;
+      $shades: map.set($shades, $shade-name, color.scale($color, $lightness: $lightness));
+    }
+    $colors: map.set($colors, $color-name, $shades);
+  }
+  @return $colors;
+}
+
+/**
+ * Generates a map of size values based on a given maximum size and a fixed number of steps.
+ *
+ * This function generates a map of sizes in `rem` units, which are evenly distributed across
+ * a range from 0 to the `max-size-in-rem`. The sizes are and the sizes evenly spaced according 
+ * to the number of `steps-in-px` specified.
+ * @param {Number} $max-size-in-rem - The maximum size to where the map is generated.
+ * @param {Number} $steps-in-px - The distance of the single size-values in pixels.
+ *
+ * @returns {$sizes} - A map of sizes - Example: (2: 0.125rem, 4: 0.25rem, 6: 0.375rem: 8: 0.5rem)
+*/
+@function generateSizesMap($max-size-in-rem: 10, $steps-in-px: 2) {
+  $sizes: ();
+
+  @for $counter from 1 through $max-size-in-rem * calc(16 / $steps-in-px) {
+    $key: $counter * $steps-in-px;
+    $value: calc($key / 16);
+    $sizes: map.set($sizes, $key, #{$value}rem);
+  }
+
+  @return $sizes;
+}
+
+/** 
+ *
+*/
+@function generateFontSizesMap() {
+  $font-sizes: ();
+  $start: 0.8;
+  $incline: 0.04;
+  @for $counter from 1 through 9 {
+    $key: $counter * 100;
+    $value: $start + ($counter - 1) * ($counter * $incline);
+    $font-sizes: map.set($font-sizes, $key, #{$value}rem);
+  }
+  @return $font-sizes;
+}
+
+@function generateFontWeightsMap() {
+  $font-weights: ();
+  @for $counter from 1 through 9 {
+    $key: $counter * 100;
+    $value: $counter * 100;
+    $font-weights: map.set($font-weights, $key, $value)
+  }
+  @return $font-weights;
+}

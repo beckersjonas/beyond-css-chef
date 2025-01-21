@@ -1,0 +1,70 @@
+@use "sass:map";
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+/**
+  This function returns any color, shade from the colors-map, or an error,
+  if either color or shade is not in that map.
+*/
+@function clr($color, $shade) {
+  @if map.has-key($colors, $color, $shade) {
+    @return map.get($colors, $color, $shade);
+  } @else {
+    @if map.has-key($colors, $color) {
+      @error "Color '#{$color}' doesn't have a shade of '#{$shade}'.";
+    } @else {
+      @error "Map '$colors' doesn't have a color of '#{$color}'.";
+    }
+  }
+}
+
+/**
+  This function returns any font-size from the fontsizes-map, or an error,
+  if the font-size is not in that map.
+*/
+@function fs($font-size) {
+  @if map.has-key($font-sizes, $font-size) {
+    @return map.get($font-sizes, $font-size);
+  } @else {
+    @error "Map '$font-sizes' doesn't have a font-size of '#{$font-size}'.";
+  }
+}
+
+/**
+  This function returns any font-weight from the fontweights-map, or an error,
+  if the font-weight is not in that map.
+*/
+@function fw($font-weight) {
+  @if map.has-key($font-weights, $font-weight) {
+    @return map.get($font-weights, $font-weight);
+  } @else {
+    @error "Map '$font-weights' doesn't have a font-weight of '#{$font-weight}'.";
+  }
+}
+
+/**
+  This function returns any size from the sizes-map, or an error,
+  if the size is not in that map.
+*/
+@function size($size) {
+  @if map.has-key($sizes, $size) {
+    @return map.get($sizes, $size);
+  } @else {
+    @error "Map '$sizes' doesn't have a size of '#{$size}'.";
+  }
+}
+
+/** 
+  This function returns any size from the breakpoints-map, or an error,
+  if the size is not in that map
+*/
+@function bp($size) {
+  @if map.has-key($breakpoints, $size) {
+    @return map.get($breakpoints, $size);
+  } @else {
+      @error "Map '$breakpoints' doesn't have a size of '#{$size}'.";
+  };
+};
+
