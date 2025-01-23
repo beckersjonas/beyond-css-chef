@@ -1,9 +1,25 @@
-@use "sass:map";
-@use "sass:math";
 @use "generators" as *;
 
-$ff-sans: "Open Sans", sans-serif;
+// $ff-sans: "Open Sans", sans-serif;
+// $font-sizes: generateFontSizesMap();
+// $font-weights: generateFontWeightsMap();
 
-$font-sizes: generateFontSizesMap();
+$ff-sans: "Lato", sans-serif;
+$ff-serif: "Abril Fatface", sans-serif;
 
-$font-weights: generateFontWeightsMap();
+$ff-base: $ff-sans;
+$ff-accent: $ff-serif;
+
+$font-sizes: (
+  900: 5rem,
+  800: 3.75rem,
+  600: 1.6875rem,
+  500: 1.3125rem,
+  400: 1.125rem,
+  300: 1rem,
+);
+
+$font-weights: (
+  400: 400,
+  700: 700,
+);

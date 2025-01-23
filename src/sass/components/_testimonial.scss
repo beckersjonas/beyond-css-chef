@@ -1,0 +1,26 @@
+
+@use "../abstracts/" as *;
+
+.testimonial {
+  max-width: 30rem;
+  margin-inline: auto;
+  box-shadow: $box-shadow-1;
+  
+  &__body {
+    padding: size(80);
+    position: relative;
+    line-height: 1.75;
+    
+    &::after {
+      content: "“";
+      position: absolute;
+      top: 0;
+      left: 0;
+      translate: 0 -25%;
+      font-size: 30rem;
+      font-family: $ff-accent;
+      opacity: .1;
+    }
+  }
+
+}

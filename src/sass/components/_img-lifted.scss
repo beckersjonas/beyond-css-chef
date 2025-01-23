@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+.img-lifted {
+  @include mq(60rem) {
+    translate: 0 -10rem;
+  }
+}

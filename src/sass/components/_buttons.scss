@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+.btn {
+  display: inline-flex;
+  padding: 1.125em 2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 0;
+
+  &[data-type="accent"] {
+    background-color: clr(primary, 400);
+    color: clr(neutral, 900);
+    &:hover {
+      background-color: clr(primary, 500);
+    }
+  }
+
+  &[data-type="outline"] {
+    --outline-size: .15em;
+    background-color: transparent;
+    color: clr(neutral, 100);
+    outline: var(--outline-size) solid currentColor;
+    outline-offset:calc(var(--outline-size) * -1);
+    &:hover {
+      background-color: clr(neutral, 100);
+      color: clr(neutral, 900);
+    }
+  }
+}

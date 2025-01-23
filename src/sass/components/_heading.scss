@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+.section-heading {
+  text-wrap: balance;
+  
+  h2 {
+    font-family: $ff-accent;
+    font-size: fs(800);
+  }
+
+  p {
+    font-size: fs(600);
+    text-transform: uppercase;
+  }
+
+  &[data-decoration="true"]::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 10rem;
+    margin: size(36) auto;
+    background-color: currentColor;
+  }
+
+  &:has(p) {
+    margin-bottom: size(36);
+  }
+  &:not(:has(p)) {
+    margin-bottom: calc(size(36) * 2.5);
+  }
+}

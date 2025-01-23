@@ -1,18 +1,18 @@
 @use "sass:map";
 @use "sass:color";
 
-/** 
- * Generates a map of colors and shades for every color of a given map of `base-colors`
- *
- * This functions generates a map of colors and 21 shades from 100% lightness (white) to -100% lightness (dark)
- * for every color of a given `base-colors`-map. The keys for every shade range from 50 to 1000 growing
- * by 50, where the key of "500" represents the original given color.
- *
- * @returns {$colors} - A map of colors and shades - Example: ( 
- *   red: (50: hsl(0, 100%, 100%), 100: hsl(0, 100%, 95%), 15: hsl(0, 100%, 90%), ..., 
- *   green: (50: hsl(80, 100%, 100%), 100: hsl(80, 100%, 95%), 15: hsl(80, 100%, 90%), ..., 
- * )
-*/
+// ========================================================================
+// Generates a map of colors and shades for every color of a given map of `base-colors`
+//
+// This functions generates a map of colors and 21 shades from 100% lightness (white) to -100% lightness (dark)
+// for every color of a given `base-colors`-map. The keys for every shade range from 50 to 1000 growing
+// by 50, where the key of "500" represents the original given color.
+//
+// @returns {$colors} - A map of colors and shades - Example: (
+//   red: (50: hsl(0, 100%, 100%), 100: hsl(0, 100%, 95%), 15: hsl(0, 100%, 90%), ...,
+//   green: (50: hsl(80, 100%, 100%), 100: hsl(80, 100%, 95%), 15: hsl(80, 100%, 90%), ...,
+// )
+
 @function generateColorsMap($base-colors) {
   $colors: ();
   $max-lightness: 100;
@@ -35,17 +35,17 @@
   @return $colors;
 }
 
-/**
- * Generates a map of size values based on a given maximum size and a fixed number of steps.
- *
- * This function generates a map of sizes in `rem` units, which are evenly distributed across
- * a range from 0 to the `max-size-in-rem`. The sizes are and the sizes evenly spaced according 
- * to the number of `steps-in-px` specified.
- * @param {Number} $max-size-in-rem - The maximum size to where the map is generated.
- * @param {Number} $steps-in-px - The distance of the single size-values in pixels.
- *
- * @returns {$sizes} - A map of sizes - Example: (2: 0.125rem, 4: 0.25rem, 6: 0.375rem: 8: 0.5rem)
-*/
+//  ========================================================================
+// Generates a map of size values based on a given maximum size and a fixed number of steps.
+//
+// This function generates a map of sizes in `rem` units, which are evenly distributed across
+// a range from 0 to the `max-size-in-rem`. The sizes are and the sizes evenly spaced according
+// to the number of `steps-in-px` specified.
+// @param {Number} $max-size-in-rem - The maximum size to where the map is generated.
+// @param {Number} $steps-in-px - The distance of the single size-values in pixels.
+//
+// @returns {$sizes} - A map of sizes - Example: (2: 0.125rem, 4: 0.25rem, 6: 0.375rem: 8: 0.5rem)
+
 @function generateSizesMap($max-size-in-rem: 10, $steps-in-px: 2) {
   $sizes: ();
 
@@ -58,9 +58,6 @@
   @return $sizes;
 }
 
-/** 
- *
-*/
 @function generateFontSizesMap() {
   $font-sizes: ();
   $start: 0.8;
@@ -78,7 +75,7 @@
   @for $counter from 1 through 9 {
     $key: $counter * 100;
     $value: $counter * 100;
-    $font-weights: map.set($font-weights, $key, $value)
+    $font-weights: map.set($font-weights, $key, $value);
   }
   @return $font-weights;
 }

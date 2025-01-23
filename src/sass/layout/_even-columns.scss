@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.even-columns {
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: var(--gap, $grid-gap);
+  
+
+  &[data-breakpoint="45rem"] {
+    @include mq(45rem) {
+      grid-auto-flow: column;
+    }
+  }
+  &[data-breakpoint="60rem"] {
+    @include mq(60rem) {
+      grid-auto-flow: column;
+    }
+  }
+  &[data-breakpoint="70rem"] {
+    @include mq(70rem) {
+      grid-auto-flow: column;
+    }
+  }
+
+}

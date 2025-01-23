@@ -1,7 +1,6 @@
 @use "../abstracts/" as *;
 
 @each $size, $value in $sizes {
-
   // margins
   .m {
     &-#{$size} {
@@ -51,4 +50,16 @@
       padding-inline-end: $value;
     }
   }
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.hero {
+  padding-block: $hero-padding;
+}
+
+.section {
+  padding-block: $section-padding;
 }

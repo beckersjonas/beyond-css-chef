@@ -1,151 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="/main.js"></script>
-    <link rel="stylesheet" href="sass/main.scss">
-    <title>Vite + TS</title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="sass/main.scss" />
+    <title>Chef</title>
   </head>
+
   <body>
+    <header class="header">
+      <img class="m-b-16 mx-auto" src="assets/logo.svg" alt="chef logo" height="80" />
+      <nav class="navigation">
+        <ul class="flex-group clr-neutral-100 fs-600" data-type="jc-center">
+          <li><a href="#about">About</a></li>
+          <li><a href="">Meals</a></li>
+          <li><a href="">Testimonials</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="example">
-      <h2>Colors:</h2>
-      <div class="flex">
-
-        <div class="color">
-          <div class="bg-neutral-0" >neutral 0</div>
-          <div class="bg-neutral-50">neutral 50</div>
-          <div class="bg-neutral-100">neutral 100</div>
-          <div class="bg-neutral-150">neutral 150</div>
-          <div class="bg-neutral-200">neutral 200</div>
-          <div class="bg-neutral-250">neutral 250</div>
-          <div class="bg-neutral-300">neutral 300</div>
-          <div class="bg-neutral-350">neutral 350</div>
-          <div class="bg-neutral-400">neutral 400</div>
-          <div class="bg-neutral-450">neutral 450</div>
-          <div class="bg-neutral-500">neutral 500</div>
-          <div class="bg-neutral-550">neutral 550</div>
-          <div class="bg-neutral-600">neutral 600</div>
-          <div class="bg-neutral-650">neutral 650</div>
-          <div class="bg-neutral-700">neutral 700</div>
-          <div class="bg-neutral-750">neutral 750</div>
-          <div class="bg-neutral-800">neutral 800</div>
-          <div class="bg-neutral-850">neutral 850</div>
-          <div class="bg-neutral-900">neutral 900</div>
-          <div class="bg-neutral-950">neutral 950</div>
-          <div class="bg-neutral-1000">neutral 1000</div>
-        </div>
-        <div class="color">
-          <div class="bg-primary-0" >primary 0</div>
-          <div class="bg-primary-50">primary 50</div>
-          <div class="bg-primary-100">primary 100</div>
-          <div class="bg-primary-150">primary 150</div>
-          <div class="bg-primary-200">primary 200</div>
-          <div class="bg-primary-250">primary 250</div>
-          <div class="bg-primary-300">primary 300</div>
-          <div class="bg-primary-350">primary 350</div>
-          <div class="bg-primary-400">primary 400</div>
-          <div class="bg-primary-450">primary 450</div>
-          <div class="bg-primary-500">primary 500</div>
-          <div class="bg-primary-550">primary 550</div>
-          <div class="bg-primary-600">primary 600</div>
-          <div class="bg-primary-650">primary 650</div>
-          <div class="bg-primary-700">primary 700</div>
-          <div class="bg-primary-750">primary 750</div>
-          <div class="bg-primary-800">primary 800</div>
-          <div class="bg-primary-850">primary 850</div>
-          <div class="bg-primary-900">primary 900</div>
-          <div class="bg-primary-950">primary 950</div>
-          <div class="bg-primary-1000">primary 1000</div>
-        </div>
-        <div class="color">
-          <div class="bg-secondary-0" >secondary 0</div>
-          <div class="bg-secondary-50">secondary 50</div>
-          <div class="bg-secondary-100">secondary 100</div>
-          <div class="bg-secondary-150">secondary 150</div>
-          <div class="bg-secondary-200">secondary 200</div>
-          <div class="bg-secondary-250">secondary 250</div>
-          <div class="bg-secondary-300">secondary 300</div>
-          <div class="bg-secondary-350">secondary 350</div>
-          <div class="bg-secondary-400">secondary 400</div>
-          <div class="bg-secondary-450">secondary 450</div>
-          <div class="bg-secondary-500">secondary 500</div>
-          <div class="bg-secondary-550">secondary 550</div>
-          <div class="bg-secondary-600">secondary 600</div>
-          <div class="bg-secondary-650">secondary 650</div>
-          <div class="bg-secondary-700">secondary 700</div>
-          <div class="bg-secondary-750">secondary 750</div>
-          <div class="bg-secondary-800">secondary 800</div>
-          <div class="bg-secondary-850">secondary 850</div>
-          <div class="bg-secondary-900">secondary 900</div>
-          <div class="bg-secondary-950">secondary 950</div>
-          <div class="bg-secondary-1000">secondary 1000</div>
-        </div>
-        <div class="color">
-          <div class="bg-secondary-0" >secondary 0</div>
-          <div class="bg-secondary-50">secondary 50</div>
-          <div class="bg-secondary-100">secondary 100</div>
-          <div class="bg-secondary-150">secondary 150</div>
-          <div class="bg-secondary-200">secondary 200</div>
-          <div class="bg-secondary-250">secondary 250</div>
-          <div class="bg-secondary-300">secondary 300</div>
-          <div class="bg-secondary-350">secondary 350</div>
-          <div class="bg-secondary-400">secondary 400</div>
-          <div class="bg-secondary-450">secondary 450</div>
-          <div class="bg-secondary-500">secondary 500</div>
-          <div class="bg-secondary-550">secondary 550</div>
-          <div class="bg-secondary-600">secondary 600</div>
-          <div class="bg-secondary-650">secondary 650</div>
-          <div class="bg-secondary-700">secondary 700</div>
-          <div class="bg-secondary-750">secondary 750</div>
-          <div class="bg-secondary-800">secondary 800</div>
-          <div class="bg-secondary-850">secondary 850</div>
-          <div class="bg-secondary-900">secondary 900</div>
-          <div class="bg-secondary-950">secondary 950</div>
-          <div class="bg-secondary-1000">secondary 1000</div>
-        </div>
-        <!-- <div class="color">
-          <div class="clr-1"></div>
-          <div class="clr-2"></div>
-          <div class="clr-3"></div>
-          <div class="clr-4"></div>
-          <div class="clr-5"></div>
-          <div class="clr-6"></div>
-          <div class="clr-7"></div>
-          <div class="clr-8"></div>
-          <div class="clr-9"></div>
-          <div class="clr-10"></div>
-          <div class="clr-11"></div>
-          <div class="clr-12"></div>
-          <div class="clr-13"></div>
-          <div class="clr-14"></div>
-          <div class="clr-15"></div>
-          <div class="clr-16"></div>
-          <div class="clr-17"></div>
-          <div class="clr-18"></div>
-          <div class="clr-19"></div>
-        </div> -->
+    <section class="hero text-center ff-accent clr-neutral-100">
+      <h1 class="fs-900 m-be-32">Homecooked meals delivered straight to your door</h1>
+      <div class="flex-group" data-type="jc-center">
+        <button class="btn" data-type="accent">Place Order</button>
+        <button class="btn" data-type="outline">More Info</button>
       </div>
-    </div>
-    
-    <div class="example">
-      <h2>Font Sizes</h2>
-      <div class="flex">
-        <div class="font-size">
-          <div class="fs-100">fs-100<span></span>rem</div>
-          <div class="fs-200">fs-200<span></span>rem</div>
-          <div class="fs-300">fs-300<span></span>rem</div>
-          <div class="fs-400">fs-400<span></span>rem</div>
-          <div class="fs-500">fs-500<span></span>rem</div>
-          <div class="fs-600">fs-600<span></span>rem</div>
-          <div class="fs-700">fs-700<span></span>rem</div>
-          <div class="fs-800">fs-800<span></span>rem</div>
-          <div class="fs-900">fs-900<span></span>rem</div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="even-columns" data-breakpoint="60rem">
+          <div>
+            <picture>
+              <source srcset="assets/about.avif">
+              <source srcset="assets/about.webp">
+              <img class="img-lifted" src="assets/about.jpg" alt="" />
+            </picture>
+          </div>
+          <div>
+            <div class="section-heading">
+              <h2 class="clr-primary-500">This is a nice big heading</h2>
+              <p>This is a subhead which mentions some interesting things</p>
+            </div>
+            <div class="flow">
+              <p class="text-uppercase fw-700">This introduces the following text</p>
+              <p class="fs-500">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus alias in
+                temporibus sunt aliquid quidem mollitia, accusamus atque amet ullam.
+              </p>
+              <p class="fs-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat doloribus
+                similique, itaque vero autem quae dolorum, ipsam impedit voluptatem odio voluptatum
+                quibusdam quod commodi, amet assumenda ea accusantium voluptate non!
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    
+    </section>
+
+    <section class="section | bg-neutral-200 text-center">
+      <div class="container">
+        <div class="section-heading" data-decoration="true">
+          <h2 class="clr-primary-500">This is a nice big heading</h2>
+          <p>This is a subhead which mentions some interesting things</p>
+        </div>
+        <div class="even-columns" data-breakpoint="60rem">
+          <div class="even-columns" data-breakpoint="45rem">
+            <div>
+              <h3 class="fw-700 text-uppercase">This is a subtitle 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium temporibus
+                quod veniam labore officiis culpa ipsam iure id saepe vel.
+              </p>
+            </div>
+            <div>
+              <h3 class="fw-700 text-uppercase">This is a subtitle 2</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium temporibus
+                quod veniam labore officiis culpa ipsam iure id saepe vel.
+              </p>
+            </div>
+          </div>
+          <div class="even-columns" data-breakpoint="45rem">
+            <div>
+              <h3 class="fw-700 text-uppercase">This is a subtitle 3</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium temporibus
+                quod veniam labore officiis culpa ipsam iure id saepe vel.
+              </p>
+            </div>
+            <div>
+              <h3 class="fw-700 text-uppercase">This is a subtitle 4</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium temporibus
+                quod veniam labore officiis culpa ipsam iure id saepe vel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | bg-neutral-900 clr-neutral-100" id="meals">
+      <div class="container" data-type="wide">
+        <div class="section-heading text-center" data-decoration="true">
+          <h2>This is a nice big heading</h2>
+          <p>This is a subhead which mentions some interesting things</p>
+        </div>
+        <div class="even-columns" data-breakpoint="60rem">
+          <figure class="interactive-figure">
+            <img src="assets/meal-01.jpg" alt="A picture of smoked salmon" />
+            <figcaption class="flow">
+              <p class="fw-700 text-uppercase">About this meal</p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore illum
+                magnam.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="interactive-figure">
+            <img src="assets/meal-02.jpg" alt="A picture of smoked salmon" />
+            <figcaption class="flow">
+              <p class="fw-700 text-uppercase">About this meal</p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore illum
+                magnam.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="interactive-figure">
+            <img src="assets/meal-03.jpg" alt="A picture of smoked salmon" />
+            <figcaption class="flow">
+              <p class="fw-700 text-uppercase">About this meal</p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore illum
+                magnam.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | text-center" id="testimonials">
+      <div class="container" data-type="wide">
+        <div class="section-heading clr-primary-500">
+          <h2>What our clients are saying about us</h2>
+        </div>
+        <div class="even-columns" data-breakpoint="70rem">
+          <div class="testimonial">
+            <img src="assets/testimonial-01.jpg" alt="" />
+            <div class="testimonial__body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit laboriosam
+              ex modi voluptatibus. Doloremque corrupti consequatur excepturi harum? Nihil laborum
+              saepe assumenda sit maiores deserunt recusandae, in veniam et hic eius?
+            </div>
+            <div class="bg-neutral-200 p-b-16">
+              <p class="fw-700 clr-primary-500">John Deer</p>
+              <p>Manager at FoodCo</p>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <img src="assets/testimonial-02.jpg" alt="" />
+            <div class="testimonial__body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit laboriosam
+              ex modi voluptatibus. Doloremque corrupti consequatur excepturi harum? Nihil laborum
+              saepe assumenda sit maiores deserunt recusandae, in veniam et hic eius?
+            </div>
+            <div class="bg-neutral-200 p-b-16">
+              <p class="fw-700 clr-primary-500">John Deer</p>
+              <p>Manager at FoodCo</p>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <img src="assets/testimonial-03.jpg" alt="" />
+            <div class="testimonial__body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit laboriosam
+              ex modi voluptatibus. Doloremque corrupti consequatur excepturi harum? Nihil laborum
+              saepe assumenda sit maiores deserunt recusandae, in veniam et hic eius?
+            </div>
+            <div class="bg-neutral-200 p-b-16">
+              <p class="fw-700 clr-primary-500">John Deer</p>
+              <p>Manager at FoodCo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+.interactive-figure {
+  --transition-in: 0.3s;
+  --transition-out: 1.5s;
+  
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: size(32);
+    background: rgb(clr(neutral, 900), 0.5);
+    backdrop-filter: blur(3px);
+    translate: 0 100%;
+    opacity: 0;
+    transition: translate var(--transition-out), opacity var(--transition-out);
+  }
+
+  &:hover figcaption {
+    translate: 0;
+    opacity: 1;
+    transition: translate var(--transition-in), opacity var(--transition-in);
+  }
+
+  // demo only
+  // border: 1px solid;
+}

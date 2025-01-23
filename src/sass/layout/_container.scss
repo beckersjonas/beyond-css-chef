@@ -1,0 +1,11 @@
+.container {
+  --max-width: 70rem;
+  --padding: 2rem;
+
+  width: min(var(--max-width), 100% - var(--padding));
+  margin-inline: auto;
+
+  &[data-type="wide"] {
+    --max-width: 85rem;
+  }
+}

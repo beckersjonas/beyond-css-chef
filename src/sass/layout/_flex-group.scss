@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap, var(--gap-y, $flex-gap)) var(--gap, var(--gap-x, $flex-gap));
+  // gap: var(--gap, var(--gap-y)) var(--gap, var(--gap-x));
+  
+
+  &[data-type="jc-center"] {
+    justify-content: center;
+  }
+
+  &[data-type="jc-end"] {
+    justify-content: end;
+  }
+}
